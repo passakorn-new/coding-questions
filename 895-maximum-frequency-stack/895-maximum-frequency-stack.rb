@@ -15,7 +15,6 @@ class FreqStack
         remove_item = @hash_map[@max_freq].pop
         @freq[remove_item] -= 1
         @max_freq -= 1 if @hash_map[@max_freq].size == 0
-
         remove_item
     end
 end
