@@ -17,3 +17,7 @@ class Solution:
                 return list_size - max(freq_tops[index], freq_bottoms[index])
         return  -1
             
+        # NOTES
+        # freq_tops = Keep freq value from tops
+        # freq_bottoms = Keep freq value from freq_bottoms
+        # equal_indexes = Keep freq at same value
