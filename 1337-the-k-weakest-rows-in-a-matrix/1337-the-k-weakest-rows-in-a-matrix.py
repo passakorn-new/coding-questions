@@ -27,6 +27,7 @@ class Solution:
                 r = mid - 1
         return l
     
+    
     # NOTES
     # - sum soldiers each row
     # - sort by soldier if same number of soldier consider index  (implement by priority queue)
