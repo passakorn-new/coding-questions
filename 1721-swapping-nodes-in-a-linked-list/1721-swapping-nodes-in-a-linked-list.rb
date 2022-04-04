@@ -9,6 +9,7 @@
 # @param {ListNode} head
 # @param {Integer} k
 # @return {ListNode}
+
 def swap_nodes(head, k)
     left = right = curr = head
     
@@ -32,4 +33,5 @@ end
 
     # Notes
     # Assume [1,2,3,4,5,6,7],  k=2
-    # left start 0, right start 0
+    # 1. run left k times
+    # 2. run right until end node
