@@ -6,7 +6,6 @@ MOD = 10**9 + 7
 def three_sum_multi(arr, target)
     res, freq_nums = 0, Array.new(101, 0)
     arr.each { |num| freq_nums[num] += 1 }
-    arr.sort!
     
     (0..100).step do |i|
         (i..100).step do |j|
