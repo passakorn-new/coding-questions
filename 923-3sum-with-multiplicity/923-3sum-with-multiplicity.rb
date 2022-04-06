@@ -4,11 +4,9 @@ MOD = 10**9 + 7
 # @param {Integer} target
 # @return {Integer}
 def three_sum_multi(arr, target)
-    res = 0
-    freq_nums = Array.new(101, 0)
+    res, freq_nums = 0, Array.new(101, 0)
+    arr.each { |num| freq_nums[num] += 1 }
     arr.sort!
-    
-    arr.each { |num| freq_nums[num] += 1 } 
     
     (0..100).step do |i|
         (i..100).step do |j|
@@ -19,13 +17,23 @@ def three_sum_multi(arr, target)
             next if k < 0 || k > 100
             
             if i == j && j == k
+                # pp "A" 
+                # pp "i = #{i}, j = #{j}, k = #{k}"
+                # pp "res = #{(freq_nums[i] * (freq_nums[i]-1) * (freq_nums[i]-2)) /6}"
                 res += (freq_nums[i] * (freq_nums[i]-1) * (freq_nums[i]-2)) /6;
             elsif i == j && j != k
+                # pp "B"
+                # pp "i = #{i}, j = #{j}, k = #{k}"
+                # pp "res = #{((freq_nums[i] * (freq_nums[i]-1)) / 2) * freq_nums[k]}"
                 res += ((freq_nums[i] * (freq_nums[i]-1)) / 2) * freq_nums[k];
             elsif i < j && j < k
+                # pp "C" 
+                # pp "i = #{i}, j = #{j}, k = #{k}"
+                # pp "res = #{ freq_nums[i] * freq_nums[j] * freq_nums[k]}"
                 res += freq_nums[i] * freq_nums[j] * freq_nums[k]
             end
             
+            # pp "-------------------"
             res %= 1000000007
         end
     end
