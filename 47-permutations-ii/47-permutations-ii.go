@@ -13,9 +13,11 @@ func permuteUnique(nums []int) [][]int {
 
 func backtracking(res *[][]int, perm []int, nums []int, count map[int]int)  {
     if len(perm) == len(nums) {
+        //copy list into temp, so it won't impact subsequent process on list
         temp := make([]int, len(perm))
         copy(temp, perm)
-        *res = append(*res, temp)
+        
+        *res = append(*res, temp) 
         return
     }
     
