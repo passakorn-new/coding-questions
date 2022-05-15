@@ -9,18 +9,18 @@
 
 // BFS
 func deepestLeavesSum(root *TreeNode) int {
-    sumPreviousLeaveLevel := 0
+    sumCurrentLeaveLevel := 0
     queue := []*TreeNode{}
     queue = append(queue, root)
     
     for len(queue) > 0 {
         l := len(queue)
-        sumPreviousLeaveLevel = 0
+        sumCurrentLeaveLevel = 0
 
         // loop queue same level
         for i := 0; i < l; i++ {
             currentNode := queue[0]
-            sumPreviousLeaveLevel += currentNode.Val
+            sumCurrentLeaveLevel += currentNode.Val
 
             queue = queue[1:]
             
@@ -34,5 +34,5 @@ func deepestLeavesSum(root *TreeNode) int {
         }
     }
 
-    return sumPreviousLeaveLevel
+    return sumCurrentLeaveLevel
 }
